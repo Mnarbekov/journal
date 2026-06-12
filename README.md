@@ -69,5 +69,5 @@ I did not build this as an unaided solo coding exercise. I identified the proble
 
 ## Read more
 
-- 🎨 **About the portfolio** — [www.mikhailnarbekov.com](https://www.mikhailnarbekov.com)
-- 👤 **More projects** — [@Mnarbekov on GitHub](https://github.com/Mnarbekov)
+- **About the portfolio** — [www.mikhailnarbekov.com](https://www.mikhailnarbekov.com)
+- **More projects** — [@Mnarbekov on GitHub](https://github.com/Mnarbekov)
