@@ -78,7 +78,7 @@ A free-form daily reflection. One entry per day is typical but not enforced.
 
 A candidate thought that has been captured for later consideration.
 `title` is required. Ideas carry a `revisions` array that preserves the full edit history.
-An idea's status (candidate → decided / abandoned) is tracked as a freeform note in the body rather than a formal state field.
+An idea's status (candidate to decided or abandoned) is tracked as a freeform note in the body rather than a formal state field.
 
 ---
 

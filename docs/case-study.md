@@ -63,7 +63,7 @@ My role was to define the problem, keep the product honest, make trade-offs, and
 
 ## Outcome
 
-This project gives me a practical example of AI-assisted product building: not “prompt → app”, but an iterative loop of problem framing, architecture choices, implementation help, real testing, and privacy-aware documentation. More importantly, it changed the journaling loop from “capture and forget” to “capture, organise, and come back when the thought is useful again.”
+This project gives me a practical example of AI-assisted product building: not “prompt to app”, but an iterative loop of problem framing, architecture choices, implementation help, real testing, and privacy-aware documentation. More importantly, it changed the journaling loop from “capture and forget” to “capture, organise, and come back when the thought is useful again.”
 
 Observable outcomes:
 
