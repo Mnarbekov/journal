@@ -27,13 +27,15 @@ The system is a private-first journaling workflow with two complementary surface
   |-- future AI-assisted reflection with human oversight
 ```
 
-The public showcase focuses on one approved screenshot and written architecture notes rather than generated placeholder visuals.
+The public showcase uses the approved architecture diagram and screenshot alongside written architecture notes.
+
+![Journal architecture bridge diagram](../assets/diagrams/journal-bridge.png)
 
 ## Main components
 
 | Component | Role | Public showcase treatment |
 |---|---|---|
-| Mobile PWA | Fast capture surface for entries, ideas, tags, and score updates. | Show only through the approved public screenshot. |
+| Mobile PWA | Fast capture surface for entries, ideas, tags, and score updates. | Show through the approved public screenshot and architecture diagram. |
 | Local browser store | Holds in-progress text, caches, scores, taxonomy, and queued writes. | Explain conceptually; no real data exports. |
 | Write queue | Serializes writes and protects against fragile mobile lifecycle events. | Explain conceptually; do not publish logs. |
 | File records | Portable Markdown/YAML and JSON records. | Use tiny synthetic examples only if needed. |
@@ -82,6 +84,7 @@ Public material may show:
 
 - written component notes;
 - the approved public screenshot;
+- the approved architecture diagram;
 - generic file-shape examples;
 - product trade-offs;
 - AI-assisted workflow notes.

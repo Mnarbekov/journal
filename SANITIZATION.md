@@ -21,6 +21,7 @@ This package explains the product, workflow, architecture, and AI-assisted build
 - [ ] Product narrative in first-person voice.
 - [ ] Written architecture notes with generic component names.
 - [ ] The approved public screenshot: `assets/screenshots/journal-phone-capture.png`.
+- [ ] The approved architecture diagram: `assets/diagrams/journal-bridge.png`.
 - [ ] Small pseudocode or simplified snippets that explain a pattern without exposing implementation detail.
 - [x] High-level technology choices such as PWA, Svelte, IndexedDB, OneDrive, Markdown/YAML, and JSON.
 
@@ -53,5 +54,5 @@ Search the showcase folder for:
 
 - [x] Public-facing files use generic wording.
 - [x] No real journal content intentionally included.
-- [x] Screenshot references point only to `assets/screenshots/journal-phone-capture.png`.
+- [x] Screenshot and diagram references point only to `assets/screenshots/journal-phone-capture.png` and `assets/diagrams/journal-bridge.png`.
 - [x] Generated placeholder screenshots, diagrams, and asset builders are excluded.

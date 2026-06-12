@@ -36,7 +36,7 @@ The mobile app is for capture. My Life, the laptop app, is where the archive bec
 
 ### 4. Privacy is a product feature
 
-The public story can show the workflow, architecture, and design thinking without exposing the actual contents. This showcase uses one approved public-safe screenshot and synthetic examples only.
+The public story can show the workflow, architecture, and design thinking without exposing the actual contents. This showcase uses one approved public-safe screenshot, one approved architecture diagram, and synthetic examples only.
 
 ## Workflow
 
@@ -83,6 +83,6 @@ This project demonstrates that I can:
 - make architecture choices around privacy, portability, and future use;
 - package the result for a public audience responsibly.
 
-## Approved public screenshot
+## Approved public visuals
 
-The public repository intentionally references one visual only: [`assets/screenshots/journal-phone-capture.png`](../assets/screenshots/journal-phone-capture.png).
+The public repository intentionally references two visuals: [`assets/screenshots/journal-phone-capture.png`](../assets/screenshots/journal-phone-capture.png) and [`assets/diagrams/journal-bridge.png`](../assets/diagrams/journal-bridge.png).

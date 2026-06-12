@@ -2,7 +2,7 @@
 
 A private-first journaling and reflection system that turns daily capture into durable personal context.
 
-> Sanitized public showcase. The only approved public visual is `assets/screenshots/journal-phone-capture.png`.
+> Sanitized public showcase. Approved public visuals: `assets/screenshots/journal-phone-capture.png` and `assets/diagrams/journal-bridge.png`.
 
 ## Why I built it
 
@@ -46,6 +46,10 @@ This project is less about showing off a clever code trick and more about showin
 The mobile app is a Svelte + Vite PWA. It keeps a local IndexedDB cache and queue for resilience, writes portable Markdown/YAML and JSON records through OneDrive, and connects to the My Life desktop projection layer for search, reflection, and future insight workflows.
 
 See [`docs/architecture.md`](docs/architecture.md) for the public-safe architecture narrative.
+
+## Architecture diagram
+
+![Journal app architecture bridge diagram](assets/diagrams/journal-bridge.png)
 
 ## Approved public screenshot
 
