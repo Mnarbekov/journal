@@ -20,7 +20,7 @@ The product challenge was to design for the real behaviour: short bursts of mobi
 
 ## Product approach
 
-I shaped the app around three principles.
+I shaped the app around four principles.
 
 ### 1. Capture first, analysis later
 
@@ -36,7 +36,7 @@ The mobile app is for capture. My Life, the laptop app, is where the archive bec
 
 ### 4. Privacy is a product feature
 
-The public story can show the workflow, architecture, and design thinking without exposing the actual contents. This showcase uses approved public-safe visuals and synthetic examples only.
+The public story can show the workflow, architecture, and design thinking without exposing the actual contents. This showcase uses one approved public-safe screenshot and synthetic examples only.
 
 ## Workflow
 
@@ -59,7 +59,7 @@ My role was to define the problem, keep the product honest, make trade-offs, and
 | Plain Markdown/YAML and JSON records | Long-term readability and easy indexing into other tools. |
 | Mobile adds lightweight categories; desktop can curate taxonomy | Keeps phone capture simple while preserving richer management later. |
 | One lightweight score, not a dashboard of metrics | Reduces tracking fatigue and protects the reflective feel of the app. |
-| Public showcase uses demo fixtures only | Demonstrates the system without turning private life into content. |
+| Public showcase uses one approved visual and synthetic examples | Demonstrates the system without turning private life into content. |
 
 ## Outcome
 
@@ -83,11 +83,6 @@ This project demonstrates that I can:
 - make architecture choices around privacy, portability, and future use;
 - package the result for a public audience responsibly.
 
-## Public-safe screenshot examples
+## Approved public screenshot
 
-Useful recreated screenshots with synthetic content include:
-
-- Capture screen — blank or generic reflection text.
-- Idea mode — synthetic title and body.
-- History/search — mock labels, mock dates, no real records.
-- Architecture notes — generic components, no private storage paths.
+The public repository intentionally references one visual only: [`assets/screenshots/journal-phone-capture.png`](../assets/screenshots/journal-phone-capture.png).

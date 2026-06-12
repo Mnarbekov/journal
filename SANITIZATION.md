@@ -14,23 +14,22 @@ This package explains the product, workflow, architecture, and AI-assisted build
 - [ ] Sensitive configuration, browser session details, or private service setup.
 - [ ] Full private source files copied from the working app.
 - [ ] Screenshots taken from the live private dataset.
+- [ ] Generated placeholder screenshots or diagrams.
 
 ## Safe public material
 
 - [ ] Product narrative in first-person voice.
 - [ ] Written architecture notes with generic component names.
-- [ ] Screenshots recreated with synthetic demo records and synthetic categories only.
+- [ ] The approved public screenshot: `assets/screenshots/journal-phone-capture.png`.
 - [ ] Small pseudocode or simplified snippets that explain a pattern without exposing implementation detail.
 - [x] High-level technology choices such as PWA, Svelte, IndexedDB, OneDrive, Markdown/YAML, and JSON.
 
 ## Screenshot safety
 
-1. Create demo records that are obviously fictional.
-2. Use generic names such as “Demo reflection”, “Project idea”, and “Weekly note”.
-3. Use synthetic categories such as “Ideas”, “Reflection”, and “Work demo”; do not expose real category names if they reveal private life context.
-4. Check the whole image, including browser/app chrome, tabs, account UI, dates, and notifications.
-5. Save only final public-safe images under `assets/screenshots/`.
-6. Re-open the saved image before publishing and inspect it at full size.
+1. Use only the approved public screenshot for this repository.
+2. Check the whole image, including browser/app chrome, tabs, account UI, dates, and notifications.
+3. Save only final approved public-safe images under `assets/screenshots/`.
+4. Re-open the saved image before publishing and inspect it at full size.
 
 ## Snippet safety
 
@@ -54,4 +53,5 @@ Search the showcase folder for:
 
 - [x] Public-facing files use generic wording.
 - [x] No real journal content intentionally included.
-- [x] Screenshot references require approved public-safe demo content only.
+- [x] Screenshot references point only to `assets/screenshots/journal-phone-capture.png`.
+- [x] Generated placeholder screenshots, diagrams, and asset builders are excluded.

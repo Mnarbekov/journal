@@ -2,7 +2,7 @@
 
 A private-first journaling and reflection system that turns daily capture into durable personal context.
 
-> Sanitized public showcase. Screenshots and examples use demo data only.
+> Sanitized public showcase. The only approved public visual is `assets/screenshots/journal-phone-capture.png`.
 
 ## Why I built it
 
@@ -47,13 +47,11 @@ The mobile app is a Svelte + Vite PWA. It keeps a local IndexedDB cache and queu
 
 See [`docs/architecture.md`](docs/architecture.md) for the public-safe architecture narrative.
 
-## Public-safe screenshot examples
+## Approved public screenshot
 
-Use sanitized demo data only.
+![Journal app phone capture](assets/screenshots/journal-phone-capture.png)
 
-- `assets/screenshots/01-capture-demo.png` — capture screen with synthetic text.
-- `assets/screenshots/02-idea-demo.png` — idea mode with synthetic title/body.
-- `assets/screenshots/03-history-demo.png` — history list with mock dates and labels.
+This is the only screenshot intentionally included in this public repository.
 
 ## Case study
 
