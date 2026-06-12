@@ -18,7 +18,7 @@ This package explains the product, workflow, architecture, and AI-assisted build
 ## Safe public material
 
 - [ ] Product narrative in first-person voice.
-- [ ] Architecture diagrams with generic component names.
+- [ ] Written architecture notes with generic component names.
 - [ ] Screenshots recreated with synthetic demo records and synthetic categories only.
 - [ ] Small pseudocode or simplified snippets that explain a pattern without exposing implementation detail.
 - [x] High-level technology choices such as PWA, Svelte, IndexedDB, OneDrive, Markdown/YAML, and JSON.
@@ -54,4 +54,4 @@ Search the showcase folder for:
 
 - [x] Public-facing files use generic wording.
 - [x] No real journal content intentionally included.
-- [x] Screenshot and diagram references require synthetic demo content only.
+- [x] Screenshot references require approved public-safe demo content only.

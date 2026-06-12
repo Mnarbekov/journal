@@ -4,7 +4,7 @@
 
 The system is a private-first journaling workflow with two complementary surfaces: a mobile PWA for fast capture and the My Life laptop app for reflection, search, and future analysis. The mobile app keeps a local cache and write queue, saves portable records as Markdown/YAML or JSON through OneDrive, and treats the desktop database as a projection rather than the source of truth.
 
-## Public-safe context diagram
+## Public-safe context model
 
 ```text
 [Me]
@@ -27,7 +27,7 @@ The system is a private-first journaling workflow with two complementary surface
   |-- future AI-assisted reflection with human oversight
 ```
 
-The same structure can be rendered as a designed diagram using demo labels only.
+The public showcase focuses on sanitized screenshots and written architecture notes rather than generated placeholder visuals.
 
 ## Main components
 
@@ -35,7 +35,7 @@ The same structure can be rendered as a designed diagram using demo labels only.
 |---|---|---|
 | Mobile PWA | Fast capture surface for entries, ideas, tags, and score updates. | Show with synthetic screenshots. |
 | Local browser store | Holds in-progress text, caches, scores, taxonomy, and queued writes. | Explain conceptually; no real data exports. |
-| Write queue | Serializes writes and protects against fragile mobile lifecycle events. | Show as a workflow diagram, not logs. |
+| Write queue | Serializes writes and protects against fragile mobile lifecycle events. | Explain conceptually; do not publish logs. |
 | File records | Portable Markdown/YAML and JSON records. | Use tiny synthetic examples only if needed. |
 | My Life desktop projection | Indexes private files into a local searchable view for reflection and search. | Describe as projection/cache, not source data. |
 | AI-assisted layer | Future summarization, reflection, and retrieval workflows. | Emphasize human oversight and privacy boundary. |
@@ -80,7 +80,7 @@ A small monthly JSON record stores the daily score signal. The point is trend aw
 
 Public material may show:
 
-- component diagrams;
+- written component notes;
 - synthetic screenshots;
 - generic file-shape examples;
 - product trade-offs;
@@ -95,11 +95,3 @@ Public material must not show:
 - private account identifiers;
 - private configuration values;
 - raw database exports or logs.
-
-## Public-safe diagram examples
-
-Useful diagrams with demo labels include:
-
-- `assets/diagrams/context-diagram.png`
-- `assets/diagrams/data-flow.png`
-- `assets/diagrams/privacy-boundary.png`

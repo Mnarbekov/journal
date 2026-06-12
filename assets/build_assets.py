@@ -4,9 +4,6 @@ Outputs:
   screenshots/01-capture-demo.png
   screenshots/02-idea-demo.png
   screenshots/03-history-demo.png
-  diagrams/context-diagram.png
-  diagrams/data-flow.png
-  diagrams/privacy-boundary.png
 
 All content is synthetic. No real journal text, names, or private data.
 Run from the assets/ directory or adjust BASE_DIR below.
@@ -19,7 +16,6 @@ import textwrap
 # ── paths ────────────────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).parent
 SCREENSHOTS = BASE_DIR / "screenshots"
-DIAGRAMS = BASE_DIR / "diagrams"
 
 # ── palette (mobile-app dark-ish neutral) ────────────────────────────────────
 BG       = (18, 18, 22)       # page background
@@ -207,7 +203,7 @@ def make_idea_screen():
     draw.text((28, 178), "Notes", fill=TEXT3, font=f_xs)
 
     idea_lines = [
-        "The current weekly review is inconsistent.",
+        "The current weekly planning loop is inconsistent.",
         "",
         "Idea: start with three questions —",
         "  · What moved forward this week?",
@@ -324,172 +320,6 @@ def make_history_screen():
     print("  OK 03-history-demo.png")
 
 
-# ── DIAGRAM helpers ───────────────────────────────────────────────────────────
-DIAG_W, DIAG_H = 800, 520
-DIAG_BG     = (245, 247, 252)
-DIAG_BOX    = (255, 255, 255)
-DIAG_BORDER = (180, 190, 210)
-DIAG_ACCENT = (59, 130, 246)    # blue
-DIAG_PURPLE = (124, 58, 237)
-DIAG_GREEN  = (16, 185, 129)
-DIAG_TEXT   = (30, 30, 50)
-DIAG_MUTED  = (100, 110, 130)
-DIAG_ARROW  = (80, 90, 110)
-
-
-def new_diag_canvas(title):
-    img = Image.new("RGB", (DIAG_W, DIAG_H), DIAG_BG)
-    draw = ImageDraw.Draw(img)
-    # header band
-    draw.rectangle([0, 0, DIAG_W, 48], fill=DIAG_ACCENT)
-    f = load_font(16, bold=True)
-    draw.text((20, 14), title, fill=WHITE, font=f)
-    draw.text((DIAG_W - 200, 14), "— synthetic demo —", fill=(200, 220, 255), font=load_font(12))
-    return img, draw
-
-
-def box(draw, cx, cy, w, h, label, sublabel=None, color=DIAG_ACCENT, radius=10):
-    x0, y0 = cx - w // 2, cy - h // 2
-    x1, y1 = cx + w // 2, cy + h // 2
-    draw.rounded_rectangle([x0, y0, x1, y1], radius=radius,
-                           fill=DIAG_BOX, outline=color, width=2)
-    f_main = load_font(13, bold=True)
-    f_sub  = load_font(11)
-    tw, th = text_size(draw, label, f_main)
-    draw.text((cx - tw // 2, cy - th // 2 - (8 if sublabel else 0)),
-              label, fill=DIAG_TEXT, font=f_main)
-    if sublabel:
-        sw, _ = text_size(draw, sublabel, f_sub)
-        draw.text((cx - sw // 2, cy + th // 2 - 4), sublabel,
-                  fill=DIAG_MUTED, font=f_sub)
-
-
-def arrow(draw, x0, y0, x1, y1, label=None):
-    draw.line([x0, y0, x1, y1], fill=DIAG_ARROW, width=2)
-    # arrowhead
-    import math
-    angle = math.atan2(y1 - y0, x1 - x0)
-    size = 8
-    for da in (0.4, -0.4):
-        ax = x1 - size * math.cos(angle - da)
-        ay = y1 - size * math.sin(angle - da)
-        draw.line([x1, y1, int(ax), int(ay)], fill=DIAG_ARROW, width=2)
-    if label:
-        mx, my = (x0 + x1) // 2, (y0 + y1) // 2
-        draw.text((mx + 4, my - 14), label, fill=DIAG_MUTED, font=load_font(10))
-
-
-# ── DIAGRAM 1 — Context diagram ───────────────────────────────────────────────
-def make_context_diagram():
-    img, draw = new_diag_canvas("Journal App — Context Diagram")
-
-    # Person
-    cx, cy = 400, 110
-    draw.ellipse([cx - 22, cy - 22, cx + 22, cy + 22], fill=DIAG_ACCENT)
-    draw.text((cx - 12, cy - 10), "👤", fill=WHITE, font=load_font(20))
-    draw.text((cx - 12, cy + 28), "User", fill=DIAG_TEXT, font=load_font(12))
-
-    # Mobile PWA
-    box(draw, 400, 230, 190, 60, "Mobile PWA",
-        "Svelte + Vite, offline-first", color=DIAG_ACCENT)
-    arrow(draw, 400, 132, 400, 198, "writes")
-
-    # Private file store
-    box(draw, 200, 370, 200, 60, "Private file store",
-        "OneDrive · Markdown/JSON", color=DIAG_GREEN)
-    arrow(draw, 315, 252, 235, 338, "saves records")
-
-    # My Life desktop
-    box(draw, 600, 370, 200, 60, "My Life (desktop)",
-        "local projection · search", color=DIAG_PURPLE)
-    arrow(draw, 485, 252, 565, 338, "indexes into")
-
-    # AI layer
-    box(draw, 400, 470, 200, 50, "AI-assisted layer",
-        "summarise · retrieve · human oversight", color=(200, 80, 80))
-    arrow(draw, 600, 400, 490, 458, "feeds")
-    arrow(draw, 200, 400, 310, 458, "feeds")
-
-    img.save(DIAGRAMS / "context-diagram.png")
-    print("  OK context-diagram.png")
-
-
-# ── DIAGRAM 2 — Data flow ─────────────────────────────────────────────────────
-def make_data_flow():
-    img, draw = new_diag_canvas("Journal App — Data Flow")
-
-    steps = [
-        (100, 240, "Capture", "Mobile PWA\nentry / idea", DIAG_ACCENT),
-        (260, 240, "Local store", "IndexedDB\ncache + queue", DIAG_MUTED),
-        (420, 240, "Write queue", "serialised\nasync writes", DIAG_ARROW),
-        (580, 240, "File record", "Markdown/YAML\nor JSON", DIAG_GREEN),
-        (740, 240, "File store", "OneDrive\nprivate folder", DIAG_GREEN),
-    ]
-
-    for i, (cx, cy, title, sub, col) in enumerate(steps):
-        box(draw, cx, cy, 130, 80, title, sub, color=col)
-        if i < len(steps) - 1:
-            arrow(draw, cx + 65, cy, cx + 130 - 65 + (260 - 130), cy)
-
-    # Desktop projection row
-    box(draw, 580, 390, 160, 60, "Desktop projection",
-        "local index · search", color=DIAG_PURPLE)
-    arrow(draw, 740, 280, 740, 340)
-    arrow(draw, 740, 340, 650, 358)
-
-    box(draw, 200, 390, 160, 60, "Recovery path",
-        "in-progress text\nrestore on reopen", color=(180, 120, 0))
-    arrow(draw, 200, 280, 200, 358)
-
-    img.save(DIAGRAMS / "data-flow.png")
-    print("  OK data-flow.png")
-
-
-# ── DIAGRAM 3 — Privacy boundary ─────────────────────────────────────────────
-def make_privacy_boundary():
-    img, draw = new_diag_canvas("Journal App — Privacy Boundary")
-
-    # Private zone
-    draw.rounded_rectangle([40, 70, 500, 460], radius=16,
-                           fill=(255, 240, 240), outline=(220, 80, 80), width=2)
-    draw.text((50, 78), "🔒  Private zone — never published", fill=(180, 50, 50),
-              font=load_font(12, bold=True))
-
-    private_items = [
-        (270, 150, "Real journal entries", "actual thoughts and records"),
-        (270, 240, "Personal tags / context", "real categories and life context"),
-        (270, 330, "Private file paths", "OneDrive folder locations"),
-        (270, 400, "Account identifiers", "user IDs, tokens, emails"),
-    ]
-    for cx, cy, title, sub in private_items:
-        box(draw, cx, cy, 340, 56, title, sub, color=(220, 80, 80), radius=8)
-
-    # Public zone
-    draw.rounded_rectangle([520, 70, 770, 460], radius=16,
-                           fill=(240, 255, 245), outline=(16, 185, 129), width=2)
-    draw.text((530, 78), "✅  Public zone", fill=(10, 130, 80),
-              font=load_font(12, bold=True))
-
-    public_items = [
-        (645, 155, "Synthetic\nscreenshots", DIAG_GREEN),
-        (645, 260, "Architecture\ndiagrams", DIAG_GREEN),
-        (645, 355, "Design\ntrade-offs", DIAG_GREEN),
-        (645, 440, "AI-assisted\nbuilder notes", DIAG_GREEN),
-    ]
-    for cx, cy, title, col in public_items:
-        lines = title.split("\n")
-        x0, y0 = cx - 80, cy - 34
-        draw.rounded_rectangle([x0, y0, x0 + 160, y0 + 68],
-                               radius=8, fill=DIAG_BOX, outline=col, width=2)
-        f = load_font(12, bold=True)
-        for j, line in enumerate(lines):
-            lw, _ = text_size(draw, line, f)
-            draw.text((cx - lw // 2, cy - 12 + j * 18), line, fill=DIAG_TEXT, font=f)
-
-    img.save(DIAGRAMS / "privacy-boundary.png")
-    print("  OK privacy-boundary.png")
-
-
 # ── Main ──────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print("Building screenshots…")
@@ -497,9 +327,4 @@ if __name__ == "__main__":
     make_idea_screen()
     make_history_screen()
 
-    print("Building diagrams…")
-    make_context_diagram()
-    make_data_flow()
-    make_privacy_boundary()
-
-    print("\nDone. All assets written to assets/screenshots/ and assets/diagrams/")
+    print("\nDone. Screenshot assets written to assets/screenshots/")

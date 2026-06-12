@@ -36,7 +36,7 @@ The mobile app is for capture. My Life, the laptop app, is where the archive bec
 
 ### 4. Privacy is a product feature
 
-The public story can show the workflow, architecture, and design thinking without exposing the actual contents. This showcase uses synthetic examples and sanitized diagrams only.
+The public story can show the workflow, architecture, and design thinking without exposing the actual contents. This showcase uses approved public-safe visuals and synthetic examples only.
 
 ## Workflow
 
@@ -90,4 +90,4 @@ Useful recreated screenshots with synthetic content include:
 - Capture screen — blank or generic reflection text.
 - Idea mode — synthetic title and body.
 - History/search — mock labels, mock dates, no real records.
-- Architecture diagram — generic components, no private storage paths.
+- Architecture notes — generic components, no private storage paths.

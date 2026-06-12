@@ -2,7 +2,7 @@
 
 A private-first journaling and reflection system that turns daily capture into durable personal context.
 
-> Sanitized public showcase. Screenshots, diagrams, and examples use demo data only.
+> Sanitized public showcase. Screenshots and examples use demo data only.
 
 ## Why I built it
 
