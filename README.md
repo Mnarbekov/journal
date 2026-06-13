@@ -2,6 +2,8 @@
 
 A private-first journaling app I built to make daily writing quick to capture and easy to come back to later.
 
+This repo is a demo-safe version. It explains how the app works and includes example entry files, but none of my real journal content.
+
 ## Why I built it
 
 I've journaled for about five years. Paper was too slow because I needed the notebook on me at the exact moment. Apple Notes was easier, but it turned into one long stream I almost never went back to. Capturing was fine; returning to anything was the problem.
@@ -26,13 +28,15 @@ The phone capture screen, using demo content.
 
 The flow: capture on the phone, save and sync through OneDrive, search and reflect on the desktop.
 
-## How it works
+## What's in this repo
 
-The app is a phone-first capture tool. Entries save on the phone first, then sync through OneDrive as simple, portable files. My desktop app reads those files into a search and reflection view, so years of writing become useful context instead of an endless scroll.
+- `examples/journal/` and `examples/ideas/` — example entry files that show the format I save in (all made up).
+- `examples/SCHEMA.md` — a plain description of what each entry contains.
+- `docs/architecture.md` — a short walkthrough of how phone capture connects to desktop search.
 
 ## Privacy
 
-This public repo uses demo content only. My real journal entries stay private and are not included here.
+This is a demo-safe version. My real journal entries stay private and are not in this repo. The example entries are invented.
 
 ## Built with AI assistance
 
