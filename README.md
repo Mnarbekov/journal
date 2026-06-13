@@ -45,5 +45,5 @@ I'm not a software developer. I shaped the idea, the way capture should feel, an
 ## Related
 
 - Portfolio: https://www.mikhailnarbekov.com
-- Medium story: coming soon
+- Medium story: [I Built a Journaling App Because I Kept Losing My Own Thinking](https://medium.com/@mikhail.narbekov/i-built-a-journaling-app-because-i-kept-losing-my-own-thinking-e86cfc0177d2)
 - GitHub: https://github.com/Mnarbekov
